@@ -1,14 +1,16 @@
-
 // main.js
-console.log('Main.js loaded');
-
 import { OwnsJeansChoices } from "./OwnsJeans.js";
+import { LivingAreaSurveyChoices } from "./UrbanDweller.js";
+
 
 const container = document.querySelector("#container")
 
-const render = () => {
+const render = async () => {
     const jeansOwnershipHTML = OwnsJeansChoices()
-    container.innerHTML = jeansOwnershipHTML
+    const locationsHTML = await LivingAreaSurveyChoices()
+    container.innerHTML = `
+        ${jeansOwnershipHTML}
+        ${locationsHTML}`
 }
-
 render()
+LivingAreaSurveyChoices();
