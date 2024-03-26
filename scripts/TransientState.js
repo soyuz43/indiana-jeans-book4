@@ -2,7 +2,7 @@
 
 
 
-//  Set up the transient state data structure and provide initial valuess
+// # Set up the transient data structure and provide initial valuess
 
 
 const transientState = {
@@ -10,7 +10,7 @@ const transientState = {
     "socioLocationId": 0
 }
 
-//  Functions to modify each property of transient state
+// # Modify each property of transient state
 
 
 export const setOwnsBlueJeans = (chosenOwnership) => {
@@ -23,23 +23,21 @@ export const setSocioLocationId = (chosenLocation) => {
     console.log(transientState);
 }
 
-//  Function to convert transient state to permanent state
+// # Function to convert transient state to permanent state
 
 
-// export const saveSurveySubmission = async () => {
+export const saveSurveySubmission = async () => {
     
-//         const postOptions = {
-//             method: 'POST',
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify(transientState),
-//         };
-//         const data =  postOptions.json();
-//         console.log(data); // Log the postOptions for debuggi catch (error) {
-//         console.error('Error sending survey submission:', error);
-//     }
-// const response = await fetch('http://localhost:8088/submit', postOptions)
+        const postOptions = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(transientState),
+        }
+        const response = await fetch("http://localhost:8088/submissions", postOptions)
+        
+    }
 
 
 
