@@ -2,19 +2,19 @@
 
 import { setOwnsBlueJeans } from "./TransientState.js"
 
-/*
-     Since the value of the radio buttons is the string of
-     'true' and the string of 'false', you must convert the
-     string to an actual boolean with JSON.parse() as seen below
-*/
-    
+
+//  Function to handle state change on survey submission
+
 const handleOwnershipChange = (changeEvent) => {
    if (changeEvent.target.name === "ownsJeans") {
        const convertedToBoolean = JSON.parse(changeEvent.target.value)
        setOwnsBlueJeans(convertedToBoolean)
    }
 }
-        
+
+
+// Component for OwnsJeans submission form
+// Adds a click event listener to the document, saved to JSON upon click.
 export const OwnsJeansChoices = () => {                                             
     
     document.addEventListener("change", handleOwnershipChange)
@@ -24,5 +24,5 @@ export const OwnsJeansChoices = () => {
         choicesHTML += "<input type='radio' name='ownsJeans' value=false /> No"
         
     return choicesHTML
-    }
+}
     
