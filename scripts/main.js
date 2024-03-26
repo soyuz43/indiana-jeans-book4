@@ -22,6 +22,6 @@ const render = async () => {
 }
 
 
-document.addEventListener("newSubmissionCreated", render)
+document.addEventListener("NewSubmissionAdded", render)
 render()
  
